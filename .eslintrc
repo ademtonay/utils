@@ -1,0 +1,8 @@
+{
+  "env": {
+    "jest": true
+  },
+  "extends": ["@ademtonay/eslint-config"],
+  "plugins": ["jest"],
+  "rules": {}
+}
