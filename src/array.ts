@@ -37,3 +37,16 @@ export function partition<T> (array: T[], filter: (i: T, idx: number, arr: T[]) 
   array.forEach((e, idx, arr) => (filter(e, idx, arr) ? pass : fail).push(e))
   return [pass, fail]
 }
+
+/**
+ * Sort an array of objects by a key
+ *
+ * @example sortByKey([{a: 1}, {a: 3}, {a: 2}], 'a') => [{a: 1}, {a: 2}, {a: 3}]
+ */
+export function sortByKey<T> (array: T[], key: keyof T): T[] {
+  return array.sort((a, b) => {
+    if (a[key] < b[key]) return -1
+    if (a[key] > b[key]) return 1
+    return 0
+  })
+}
